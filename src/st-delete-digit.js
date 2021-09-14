@@ -11,7 +11,9 @@ import { NotImplementedError } from '../extensions/index.js';
  * For n = 152, the output should be 52
  *
  */
-export default function deleteDigit(/* n */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function deleteDigit(n) {
+	n = String(n).split('').map(val => Number(val));
+	let minIndex = 0;
+	n.forEach((val, key) => val < n[minIndex] && (minIndex = key));
+	return Number(n.filter((val, key) => key !== minIndex).join(''));
 }
