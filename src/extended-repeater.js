@@ -18,10 +18,10 @@ import { NotImplementedError } from '../extensions/index.js';
 export default function repeater(str, options) {
   str = String(str);
   
-  options.repeatTimes = options.repeatTimes ?? 1;
-  options.separator = options.separator ?? '+';
-  options.additionRepeatTimes = options.additionRepeatTimes ?? 1;
-  options.additionSeparator = options.additionSeparator ?? '|';
+  options.repeatTimes = options.repeatTimes || 1;
+  options.separator = options.separator || '+';
+  options.additionRepeatTimes = options.additionRepeatTimes || 1;
+  options.additionSeparator = options.additionSeparator || '|';
   
   if(options.addition === undefined)
   {
